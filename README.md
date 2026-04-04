@@ -3,7 +3,6 @@
 **Lightweight multi-vendor SIEM/SOAR platform** with CSV-driven architecture, auto-healing, Redis HA, Kafka auto-config, PTL backpressure, and ChatOps (Slack + Telegram).
 
 ![Sender Auto-Healing](https://github.com/user-attachments/assets/0df951fa-8cee-4df9-a498-335eeba42943)
-
 *Sender Worker auto-healing in 4 seconds.*
 
 ---
@@ -68,9 +67,6 @@ Monitors 8+ supervisors with a 3-layer cross-check mechanism.
 
 ### Linux SSH Brute Force & Sudo
 ![Linux Alerts](https://github.com/user-attachments/assets/fbf1e5ce-9a1d-4a1c-9474-8254df5c9c65)
-
-### VMware HA Failover *(anh thêm ảnh VMware vào đây)*
-### Redis HA Failover/Failback *(anh thêm ảnh Redis vào đây)*
 
 ---
 
