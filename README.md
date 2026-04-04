@@ -72,19 +72,30 @@ Monitors 8+ supervisors with a 3-layer cross-check mechanism.
 
 ## 📁 CSV Structure
 
-The entire platform is configured via CSV files — 38 files in total.
+The entire platform is configured via CSV files.
 
-*(anh chèn ảnh cây thư mục CSV vào đây)*
 configs/configs_data/
 ├── alert_rules.csv
 ├── buttons.csv
 ├── channels.csv
 ├── colors.csv
 ├── devices.csv
+├── devices_lookup.csv
+├── filter_scale.csv
+├── icons.csv
+├── kafka.csv
+├── kafka_config.csv
 ├── patterns.csv (4,344 rules)
 ├── patterns_network.csv (683 rules)
 ├── patterns_system.csv (3,585 rules)
-└── ...
+├── redis.csv
+├── sender_scale.csv
+├── service_ports.csv
+├── slack_action_rules.csv
+├── slack_rbac.csv
+├── vector.csv
+├── web_server.csv
+└── worker_scale.csv
 
 ---
 
@@ -106,5 +117,3 @@ configs/configs_data/
 ---
 
 *Curious about PTL internals? Want to collaborate or license the platform? Let's talk.*
-
-Lightweight multi-vendor SIEM/SOAR platform with CSV-driven architecture, auto-healing, Redis HA, Kafka auto-config, PTL backpressure, and ChatOps (Slack + Telegram)
