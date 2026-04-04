@@ -3,6 +3,7 @@
 **Lightweight multi-vendor SIEM/SOAR platform** with CSV-driven architecture, auto-healing, Redis HA, Kafka auto-config, PTL backpressure, and ChatOps (Slack + Telegram).
 
 ![Sender Auto-Healing](https://github.com/user-attachments/assets/0df951fa-8cee-4df9-a498-335eeba42943)
+
 *Sender Worker auto-healing in 4 seconds.*
 
 ---
