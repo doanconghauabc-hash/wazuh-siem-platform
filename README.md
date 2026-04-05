@@ -114,6 +114,4 @@ configs/configs_data/
 
 - **GitHub**: [doanconghauabc-hash/wazuh-siem-platform](https://github.com/doanconghauabc-hash/wazuh-siem-platform)
 
----
 
-*Curious about PTL internals? Want to collaborate or license the platform? Let's talk.*
