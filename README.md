@@ -35,8 +35,6 @@ PTL is an adaptive load regulation mechanism that automatically detects performa
 
 The system handles sudden traffic spikes, avoids bottlenecks, and prevents data loss.
 
-*(Curious how it works? Feel free to reach out.)*
-
 ### 🗄️ Infrastructure as CSV
 Kafka broker settings, topics, partitions; Vector pipelines (sources, sinks); Redis primary/standby HA — all auto-generated from CSV. No manual config files.
 
