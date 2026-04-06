@@ -26,6 +26,10 @@ Interactive buttons on Slack and Telegram: **Restart / Stop / Start / Status / L
 
 *Kafka auto-healing after failure.*
 
+## ⚙️ Architecture Overview
+
+### **Wazuh → Vector → Kafka → Dispatcher → Redis → Filter → Redis → Sender → Slack/Telegram**
+
 ### 🎛️ PTL — Progressive Threshold Limiter (self-developed)
 PTL is an adaptive load regulation mechanism that automatically detects performance degradation thresholds and adjusts processing speed in real time — with zero manual intervention.
 
