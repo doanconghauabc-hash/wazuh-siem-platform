@@ -2,7 +2,8 @@
 
 **Lightweight multi-vendor SIEM/SOAR platform** with CSV-driven architecture, auto-healing, Redis HA, Kafka auto-config, PTL backpressure, and ChatOps (Slack + Telegram).
 
-![Sender Auto-Healing](https://github.com/user-attachments/assets/0df951fa-8cee-4df9-a498-335eeba42943)
+<img width="553" height="493" alt="image" src="https://github.com/user-attachments/assets/edf25669-62d5-45ed-80ee-39a019132dda" />
+
 *Sender Worker auto-healing in 4 seconds.*
 
 ---
@@ -21,7 +22,8 @@ Workers respawn automatically when they die (4‑6 seconds downtime). The system
 ### 💬 ChatOps SOAR
 Interactive buttons on Slack and Telegram: **Restart / Stop / Start / Status / Log**. Incident lifecycle tracking: `DOWN → AUTO → UP → closed`.
 
-![Kafka Auto-Healing](https://github.com/user-attachments/assets/82040813-c7ba-4aed-8218-8975f9bbf05a)
+<img width="771" height="908" alt="image" src="https://github.com/user-attachments/assets/eeaa6bde-e256-4ddf-b8c5-760f5b2d11db" />
+
 *Kafka auto-healing after failure.*
 
 ### 🎛️ PTL — Progressive Threshold Limiter (self-developed)
@@ -57,13 +59,31 @@ Monitors 8+ supervisors with a 3-layer cross-check mechanism.
 - Restore configuration, systemd services, Kafka topics
 - Resume processing from last checkpoint
 - Tested: delete everything → system rebuilds itself
+<img width="696" height="693" alt="image" src="https://github.com/user-attachments/assets/7d2b7728-29b3-4e2a-9cd5-0d582035670d" />
 
 ---
 
 ## 📸 Alert Examples
 
-### Cisco Interface UP/DOWN
-![Cisco Interface](https://github.com/user-attachments/assets/7bef8df4-9a5c-4148-acd2-54fb9a033c03)
+### How Alerts Are Filtered & Routed
+
+Users can define their own alert conditions using two fields in `devices.csv`: `log_monitor` (what type of log to watch, like INTERFACE, AUTH, CONFIG, or SYSTEM) and `monitor_condition` (the specific value to match, such as a particular interface name).
+
+When a log matches BOTH the `log_monitor` type AND the `monitor_condition` value, an alert is triggered and sent to the Special Channel (SPC). All other logs go to the Normal Channel or are ignored.
+
+**Example:** If you set `log_monitor=INTERFACE` and `monitor_condition=GigabitEthernet1/0/23`, you will only get alerts when that specific interface goes up or down. Any other interface changes will not trigger an alert.
+<img width="1157" height="936" alt="image" src="https://github.com/user-attachments/assets/18e70098-b474-4336-9919-9d2f722014bd" />
+
+
+### Alert Grouping
+
+Before sending, multiple alerts are grouped by vendor to keep your chat clean:
+This example shows alerts routed to the **Normal Channel** - events with lower severity (INFO, MEDIUM) that don't require immediate action. Examples include interface down, successful logins, and test logs.
+
+Alerts are still **grouped by vendor** before sending to reduce noise.
+<img width="783" height="1007" alt="image" src="https://github.com/user-attachments/assets/61845310-d869-4ee5-8baf-e9c13a16e763" />
+
+
 
 ### Linux SSH Brute Force & Sudo
 ![Linux Alerts](https://github.com/user-attachments/assets/fbf1e5ce-9a1d-4a1c-9474-8254df5c9c65)
@@ -85,9 +105,9 @@ configs/configs_data/
 ├── icons.csv
 ├── kafka.csv
 ├── kafka_config.csv
-├── patterns.csv (4,344 rules)
-├── patterns_network.csv (683 rules)
-├── patterns_system.csv (3,585 rules)
+├── patterns.csv
+├── patterns_network.csv
+├── patterns_system.csv
 ├── redis.csv
 ├── sender_scale.csv
 ├── service_ports.csv
